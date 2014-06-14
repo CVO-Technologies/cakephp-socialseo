@@ -73,4 +73,14 @@ class TitleHelper extends AppHelper {
 		}
 	}
 
+	public function beforeLayout($layoutFile) {
+		if (!$this->getPageTitle()) {
+			if ($this->_View->fetch('title')) {
+				$this->setPageTitle($this->_View->fetch('title'));
+			} else {
+				$this->setPageTitle(Inflector::humanize($this->_View->viewPath));
+			}
+		}
+	}
+
 }
