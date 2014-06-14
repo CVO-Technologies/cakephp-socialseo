@@ -23,6 +23,11 @@ class SeoHelper extends AppHelper {
 	 */
 	private $keywords = array();
 
+	/**
+	 * @var array
+	 */
+	private $images = array();
+
 	private $pageType = 'page';
 
 	private $viewBlock = 'seo';
@@ -64,6 +69,20 @@ class SeoHelper extends AppHelper {
 	 */
 	public function addKeyword($keyword) {
 		$this->keywords[] = $keyword;
+	}
+
+	public function setImage($url, $type = 'default') {
+		$this->images[$type] = $url;
+	}
+
+	public function getImage($type = 'default') {
+		if (isset($this->images[$type])) {
+			return $this->images[$type];
+		}
+		if (isset($this->images['default'])) {
+			return $this->images['default'];
+		}
+		return false;
 	}
 
 	/**

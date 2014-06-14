@@ -22,6 +22,11 @@ class TwitterCardHelper extends Apphelper {
 
 	private $creatorUsername = null;
 
+	/**
+	 * @var string
+	 */
+	private $image = null;
+
 	private $viewBlock = 'twitter_card';
 
 	/**
@@ -52,6 +57,27 @@ class TwitterCardHelper extends Apphelper {
 		$this->creatorUsername = $creatorUsername;
 	}
 
+	/**
+	 * @return string
+	 */
+	public function getImage() {
+		return $this->image;
+	}
+
+	/**
+	 * @param string $image
+	 */
+	public function setImage($image) {
+		$this->image = $image;
+	}
+
+	public function beforeLayout($layoutFile) {
+		if ($this->Seo->getImage('twitter')) {
+			$this->setImage($this->Seo->getImage('twitter'));
+		}
+	}
+
+
 	public function fetch() {
 		$this->Html->meta(
 			array('property' => 'twitter:card', 'content' => 'summary'),
@@ -68,6 +94,13 @@ class TwitterCardHelper extends Apphelper {
 		if ($this->getCreatorUsername()) {
 			$this->Html->meta(
 				array('property' => 'twitter:creator', 'content' => $this->getCreatorUsername()),
+				null,
+				array('inline' => false, 'block' => $this->viewBlock)
+			);
+		}
+		if ($this->getImage()) {
+			$this->Html->meta(
+				array('property' => 'twitter:image:src', 'content' => $this->getImage()),
 				null,
 				array('inline' => false, 'block' => $this->viewBlock)
 			);

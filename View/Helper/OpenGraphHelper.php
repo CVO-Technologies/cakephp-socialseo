@@ -15,11 +15,36 @@ class OpenGraphHelper extends Apphelper {
 		'SocialSeo.Title', 'SocialSeo.Seo', 'Html'
 	);
 
+	/**
+	 * @var string
+	 */
+	private $image = null;
+
 	private $pageTypeMap = array(
 		'page'    => 'website',
 		'post'    => 'article',
 		'profile' => 'profile'
 	);
+
+	/**
+	 * @return string
+	 */
+	public function getImage() {
+		return $this->image;
+	}
+
+	/**
+	 * @param string $image
+	 */
+	public function setImage($image) {
+		$this->image = $image;
+	}
+
+	public function beforeLayout($layoutFile) {
+		if ($this->Seo->getImage('open_graph')) {
+			$this->setImage($this->Seo->getImage('open_graph'));
+		}
+	}
 
 	public function getType() {
 		if (isset($this->pageTypeMap[$this->Seo->getPageType()])) {
@@ -54,6 +79,13 @@ class OpenGraphHelper extends Apphelper {
 				array('inline' => false, 'block' => 'open_graph')
 			);
 		endif;
+		if ($this->getImage()) {
+			$this->Html->meta(
+				array('property' => 'og:image', 'content' => $this->getImage()),
+				null,
+				array('inline' => false, 'block' => 'open_graph')
+			);
+		}
 		$this->Html->meta(
 			array('property' => 'og:url', 'content' => $this->Seo->getCanonicalUrl()),
 			null,
