@@ -53,6 +53,11 @@ class TwitterCardHelper extends Apphelper {
 	}
 
 	public function fetch() {
+		$this->Html->meta(
+			array('property' => 'twitter:card', 'content' => 'summary'),
+			null,
+			array('inline' => false, 'block' => $this->viewBlock)
+		);
 		if ($this->getSiteUsername()) {
 			$this->Html->meta(
 				array('property' => 'twitter:site', 'content' => $this->getSiteUsername()),
