@@ -9,7 +9,7 @@ App::uses('AppHelper', 'View/Helper');
  * @property SeoHelper Seo
  * @property TitleHelper Title
  */
-class OpenGraphHelper extends Apphelper {
+class OpenGraphHelper extends AppHelper {
 
 	public $helpers = array(
 		'SocialSeo.Title', 'SocialSeo.Seo', 'Html'

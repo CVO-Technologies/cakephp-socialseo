@@ -7,9 +7,9 @@ App::uses('AppHelper', 'View/Helper');
  *
  * @property HtmlHelper Html
  * @property TitleHelper Title
- * @property Seohelper Seo
+ * @property SeoHelper Seo
  */
-class TwitterCardHelper extends Apphelper {
+class TwitterCardHelper extends AppHelper {
 
 	public $helpers = array(
 		'SocialSeo.Title', 'SocialSeo.Seo', 'Html'

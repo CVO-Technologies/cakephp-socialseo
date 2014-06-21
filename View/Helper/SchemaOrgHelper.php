@@ -9,7 +9,7 @@ App::uses('AppHelper', 'View/Helper');
  * @property SeoHelper Seo
  * @property TitleHelper Title
  */
-class SchemaOrgHelper extends Apphelper {
+class SchemaOrgHelper extends AppHelper {
 
 	public $helpers = array(
 		'SocialSeo.Title', 'SocialSeo.Seo', 'Html'
