@@ -1,0 +1,18 @@
+{
+    "name": "cvo-technologies/socialseo",
+    "type": "cakephp-plugin",
+    "description": "Social and SEO plugin",
+    "authors": [
+        {
+            "name": "Marlin Cremers",
+            "email": "m.cremers@cvo-technologies.com"
+        }
+    ],
+    "require": {
+        "composer/installers": "~1.0",
+        "cakephp/cakephp": "2.4.*"
+    },
+    "extra": {
+        "installer-name": "SocialSeo"
+    }
+}
