@@ -10,7 +10,7 @@
     ],
     "require": {
         "composer/installers": "~1.0",
-        "cakephp/cakephp": "2.4.*"
+        "cakephp/cakephp": "~2"
     },
     "extra": {
         "installer-name": "SocialSeo"
