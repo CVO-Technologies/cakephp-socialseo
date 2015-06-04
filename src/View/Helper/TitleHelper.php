@@ -1,8 +1,11 @@
 <?php
 
-App::uses('AppHelper', 'View/Helper');
+namespace SocialSeo\View\Helper;
 
-class TitleHelper extends AppHelper {
+use Cake\Utility\Inflector;
+use Cake\View\Helper;
+
+class TitleHelper extends Helper {
 
 	public $helpers = array(
 		'Html'
