@@ -10,9 +10,11 @@
     ],
     "require": {
         "composer/installers": "~1.0",
-        "cakephp/cakephp": "~2"
+        "cakephp/cakephp": "~3"
     },
-    "extra": {
-        "installer-name": "SocialSeo"
+    "autoload": {
+        "psr-4": {
+            "SocialSeo\\": "src"
+        }
     }
 }
