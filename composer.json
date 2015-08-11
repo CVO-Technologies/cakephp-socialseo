@@ -9,7 +9,6 @@
         }
     ],
     "require": {
-        "composer/installers": "~1.0",
         "cakephp/cakephp": "~3"
     },
     "autoload": {
