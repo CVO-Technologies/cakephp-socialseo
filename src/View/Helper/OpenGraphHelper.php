@@ -1,6 +1,8 @@
 <?php
 
-App::uses('AppHelper', 'View/Helper');
+namespace SocialSeo\View\Helper;
+
+use Cake\View\Helper;
 
 /**
  * Class OpenGraphHelper
@@ -9,7 +11,7 @@ App::uses('AppHelper', 'View/Helper');
  * @property SeoHelper Seo
  * @property TitleHelper Title
  */
-class OpenGraphHelper extends AppHelper {
+class OpenGraphHelper extends Helper {
 
 	public $helpers = array(
 		'SocialSeo.Title', 'SocialSeo.Seo', 'Html'

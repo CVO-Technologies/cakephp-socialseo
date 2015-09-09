@@ -1,13 +1,15 @@
 <?php
 
-App::uses('AppHelper', 'View/Helper');
+namespace SocialSeo\View\Helper;
+
+use Cake\View\Helper;
 
 /**
  * Class SeoHelper
  *
  * @property mixed Html
  */
-class SeoHelper extends AppHelper {
+class SeoHelper extends Helper {
 
 	public $helpers = array(
 		'Html'

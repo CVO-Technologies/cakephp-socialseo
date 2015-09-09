@@ -1,6 +1,8 @@
 <?php
 
-App::uses('AppHelper', 'View/Helper');
+namespace SocialSeo\View\Helper;
+
+use Cake\View\Helper;
 
 /**
  * Class TwitterCardHelper
@@ -9,7 +11,7 @@ App::uses('AppHelper', 'View/Helper');
  * @property TitleHelper Title
  * @property SeoHelper Seo
  */
-class TwitterCardHelper extends AppHelper {
+class TwitterCardHelper extends Helper {
 
 	public $helpers = array(
 		'SocialSeo.Title', 'SocialSeo.Seo', 'Html'
