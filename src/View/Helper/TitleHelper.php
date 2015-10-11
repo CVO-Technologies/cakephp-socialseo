@@ -1,6 +1,6 @@
 <?php
 
-namespace SocialSeo\View\Helper;
+namespace CvoTechnologies\SocialSeo\View\Helper;
 
 use Cake\Utility\Inflector;
 use Cake\View\Helper;
